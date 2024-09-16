@@ -30,3 +30,15 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.sideBar {
+    flex: 1 1 auto;
+    width: 33%;
+    background-image: url(photo-1585202900225-6d3ac20a6962.avif);
+    background-size: cover;
+}
+
+main {
+    flex: 2 1 auto;
+    width: 66%;
+}
