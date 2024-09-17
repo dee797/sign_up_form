@@ -9,6 +9,7 @@
 
 
 /* Reset default styles */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,17 +26,33 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 12px;
 	font: inherit;
 	vertical-align: baseline;
+}
+
+:root {
+    --logoBar-height: clamp(140px, 10vh, 350px);
 }
 
 body {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: max(825px, 100vh);
     font-family: 'Roboto', sans-serif;
 }
+
+main {
+    flex: 2 1 auto;
+    width: 66%;
+    background-color: rgb(247, 247, 247);
+}
+
+
+
+/* Side Bar Styles */
 
 .sideBar {
     display: grid;
@@ -47,24 +64,19 @@ body {
     background-repeat: no-repeat;
 }
 
-main {
-    flex: 2 1 auto;
-    width: 66%;
-}
-
 .logoBar {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
-    top: 25%;
+    top: 150px;
     width: 100%;
     height: fit-content;
 }
 
 .logoBar img {
-    height: clamp(140px, 15vh, 350px);
+    height: var(--logoBar-height);
     box-sizing: border-box;
     padding: 10px 0px;
     width: 90px;
@@ -78,6 +90,7 @@ main {
 }
 
 .sideBar .credit {
+    box-sizing: border-box;
     color: white;
     width: 100%;
     text-align: center;
@@ -87,4 +100,32 @@ main {
 
 .credit span {
     text-decoration: underline;
+}
+
+
+
+/* Section 1 Styles */
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    font-weight: 600;
+    height: calc(150px + var(--logoBar-height));
+    letter-spacing: 1.25px;
+    font-size: 1.35rem;
+    padding: 50px;
+}
+
+em {
+    font-style: italic;
+}
+
+.section1 p {
+    width: 75%;
+}
+
+.section1 .call1 {
+    padding-bottom: 25px;
 }
