@@ -50,6 +50,10 @@ main {
     background-color: rgb(247, 247, 247);
 }
 
+a, a:visited, a:link {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 /* Side Bar Styles */
@@ -111,10 +115,7 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     box-sizing: border-box;
-    font-weight: 600;
     height: calc(150px + var(--logoBar-height));
-    letter-spacing: 1.25px;
-    font-size: 1.35rem;
     padding: 50px;
 }
 
@@ -127,5 +128,48 @@ em {
 }
 
 .section1 .call1 {
-    padding-bottom: 25px;
+    padding-bottom: 30px;
+}
+
+.section1, legend {
+    font-weight: 600;
+    font-size: 1.35rem;
+    padding-bottom: 35px;
+    letter-spacing: 1.15px;
+    word-spacing: 0.75px;
+}
+
+
+
+/* Section 2 Styles */
+
+.section2 {
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 7px rgb(221, 221, 221), 1px -1px 1px rgb(241, 241, 241);
+    padding: 30px 50px;
+    height: 35%;
+    color: rgb(60, 60, 80);
+}
+
+legend {
+    width: 100%;
+}
+
+form {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    word-spacing: 1.25px;
+    width: 100%;
+}
+
+form div {
+    width: 50%;
 }
