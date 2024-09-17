@@ -34,7 +34,7 @@
         </div>
 
         <div class="section2">
-            <form action="#" method="get">
+            <form id="userInfo" action="#" method="get">
                 <legend>Let's do this!</legend>
 
                 <div>
@@ -59,19 +59,19 @@
 
                 <div>
                     <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" required>
                 </div>
 
                 <div>
                     <label for="checkPassword">CONFIRM PASSWORD</label>
-                    <input type="password" id="checkPassword" name="checkPassword">
+                    <input type="password" id="checkPassword" name="checkPassword" required>
                 </div>
 
             </form>
         </div>
 
         <div class="section3">
-            <button id="createAccount" type="submit">Create Account</button>
+            <button id="createAccount" type="submit" form="userInfo">Create Account</button>
             <p>
                 Already have an account? <span class="login"><a href="#">Log in</a></span>
             </p>
