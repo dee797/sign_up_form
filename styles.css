@@ -164,7 +164,7 @@ label {
     font-weight: 600;
     letter-spacing: 2px;
     word-spacing: 1.25px;
-    width: 100%;
+    width: fit-content;
 }
 
 form div {
@@ -175,7 +175,7 @@ input {
     box-sizing: border-box;
     border: 1px solid #E5E7EB;
     border-radius: 5px;
-    width: 65%;
+    width: 70%;
     height: 35px;
     padding: 1px 10px;
     margin-top: 2px;
@@ -188,4 +188,8 @@ input:focus-visible, input:focus {
     outline: none;
     border: 1px solid blue;
     box-shadow: 5px 5px 5px rgb(221, 221, 221);
+}
+
+input#password {
+    margin-bottom: 0px;
 }
