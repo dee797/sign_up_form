@@ -74,7 +74,7 @@ a, a:visited, a:link {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
-    top: 150px;
+    top: 115px;
     width: 100%;
     height: fit-content;
 }
@@ -115,7 +115,7 @@ a, a:visited, a:link {
     flex-direction: column;
     justify-content: flex-end;
     box-sizing: border-box;
-    height: calc(150px + var(--logoBar-height));
+    height: calc(115px + var(--logoBar-height));
     padding: 50px;
 }
 
@@ -125,9 +125,6 @@ em {
 
 .section1 p {
     width: 75%;
-}
-
-.section1 .call1 {
     padding-bottom: 30px;
 }
 
@@ -148,7 +145,7 @@ em {
     box-sizing: border-box;
     box-shadow: 7px 7px 7px rgb(221, 221, 221), 1px -1px 1px rgb(241, 241, 241);
     padding: 30px 50px;
-    height: 35%;
+    height: fit-content;
     color: rgb(60, 60, 80);
 }
 
@@ -163,7 +160,7 @@ form {
 
 label {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
     word-spacing: 1.25px;
@@ -171,5 +168,24 @@ label {
 }
 
 form div {
-    width: 50%;
+    width: 40%;
+}
+
+input {
+    box-sizing: border-box;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    width: 65%;
+    height: 35px;
+    padding: 1px 10px;
+    margin-top: 2px;
+    margin-bottom: 30px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input:focus-visible, input:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 5px 5px 5px rgb(221, 221, 221);
 }
