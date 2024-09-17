@@ -1,7 +1,12 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @font-face {
     font-family: norse-bold;
     src: url(Norse-Bold.otf);
 }
+
 
 /* Reset default styles */
 html, body, div, span, applet, object, iframe,
@@ -29,11 +34,14 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sideBar {
+    display: grid;
     flex: 1 1 auto;
     width: 33%;
+    height: 100%;
     background-image: url(photo-1585202900225-6d3ac20a6962.avif);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -50,7 +58,7 @@ main {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
-    top: 20%;
+    top: 25%;
     width: 100%;
     height: fit-content;
 }
@@ -65,6 +73,18 @@ main {
 .logoBar .logoText {
     font-family: norse-bold;
     color: white;
-    font-size: 90px;
+    font-size: min(5em, 90px);
     font-weight: bold;
+}
+
+.sideBar .credit {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.credit span {
+    text-decoration: underline;
 }
