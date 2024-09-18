@@ -2,7 +2,6 @@ function main() {
 
     const RED = "rgb(200,0,0)";
     const REDBORDER = `1px solid ${RED}`;
-    const GRAYBORDER = "1px solid #E5E7EB";
 
 
     const pass = document.querySelector("#password");
@@ -19,18 +18,17 @@ function main() {
 
     let passInputs = "";
     let checkPassInputs = "";
-    checkPassMatch();
 
 
-    pass.addEventListener("input", (event) => {
-        passInputs = event.data;
+    pass.addEventListener("input", () => {
+        passInputs = pass.value;
         checkPassMatch(passInputs, checkPassInputs);
     });
 
-    checkPass.addEventListener("input", (event) => {
-        checkPassInputs = event.data;
+    checkPass.addEventListener("input", () => {
+        checkPassInputs = checkPass.value;
         checkPassMatch(passInputs, checkPassInputs);
-    })
+    });
 
     pass.addEventListener("invalid", () => {
         passMismatch.style.display = "block";
@@ -44,7 +42,7 @@ function main() {
 
 
     function checkPassMatch(passInputs, checkPassInputs) {
-        if (passInputs !== checkPassInputs || (passInputs === "" && checkPassInputs == "")) {
+        if (passInputs === "" || checkPassInputs === "" || passInputs !== checkPassInputs) {
             pass.dispatchEvent(new InputEvent("invalid"));
             checkPass.dispatchEvent(new InputEvent("invalid"));
         } else {
@@ -53,6 +51,8 @@ function main() {
             checkPass.style.border = "";
         }
     }
+
+    checkPassMatch(passInputs,checkPassInputs);
 }
 
 main()
