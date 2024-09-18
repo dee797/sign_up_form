@@ -8,6 +8,7 @@
 }
 
 
+
 /* Reset default styles */
 
 html, body, div, span, applet, object, iframe,
@@ -33,6 +34,8 @@ time, mark, audio, video {
 
 :root {
     --logoBar-height: clamp(140px, 10vh, 350px);
+    --section1-height: calc(90px + var(--logoBar-height));
+    --body-height: max(825px, 100vh);
 }
 
 body {
@@ -40,7 +43,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
-    height: max(825px, 100vh);
+    height: var(--body-height);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -56,13 +59,13 @@ a, a:visited, a:link {
 }
 
 
+
 /* Side Bar Styles */
 
 .sideBar {
     display: grid;
     flex: 1 1 auto;
     width: 33%;
-    height: 100%;
     background-image: url(photo-1585202900225-6d3ac20a6962.avif);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -74,7 +77,7 @@ a, a:visited, a:link {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
-    top: 115px;
+    top: 90px;
     width: 100%;
     height: fit-content;
 }
@@ -115,7 +118,7 @@ a, a:visited, a:link {
     flex-direction: column;
     justify-content: flex-end;
     box-sizing: border-box;
-    height: calc(115px + var(--logoBar-height));
+    height: var(--section1-height);
     padding: 50px;
 }
 
@@ -192,4 +195,63 @@ input:focus-visible, input:focus {
 
 input#password {
     margin-bottom: 0px;
+}
+
+
+
+/* Section 3 Styles */
+
+.section3 {
+    padding: 50px;
+    height: calc(var(--body-height) - (var(--section1-height) + 369px));
+    box-sizing: border-box;
+}
+
+
+#createAccount {
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    background-color: #596D48;
+    color: white;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 7px;
+    padding: 15px 65px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    box-shadow: 7px 7px 7px rgb(221, 221, 221);
+}
+
+.section3 p {
+    font-size: 1.20rem;
+}
+
+.section3 a {
+    color:#596D48;
+    font-weight: bold;
+}
+
+
+
+
+
+@media only screen and (max-width:1000px) {
+    .section1 p.call2 {
+        padding-bottom: 0px;
+    }
+
+    .section1 p {
+        width: 100%;
+    }
+
+    #createAccount {
+        padding: 15px 0px;
+        width: 40%;
+    }
+
+    form div {
+        width: 50%;
+    }
 }
