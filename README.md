@@ -1,1 +1,1 @@
-# sign_up_form
+A mockup for an account creation page using HTML, CSS, and JS. Based on The Odin Project's 'Sign-Up Form' assignment.
