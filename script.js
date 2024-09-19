@@ -1,3 +1,12 @@
+window.onload = () => {
+    document.forms[0].onsubmit = () => {
+        alert("Form submitted!");
+        document.forms[0].dispatchEvent(new FormDataEvent("reset"));
+        return false;
+    }
+}
+
+
 function main() {
 
     const RED = "rgb(200,0,0)";
