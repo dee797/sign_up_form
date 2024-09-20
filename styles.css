@@ -43,7 +43,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
-    height: var(--body-height);
+    height: fit-content;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -128,6 +128,9 @@ em {
 
 .section1 p {
     width: 75%;
+}
+
+.call1 {
     padding-bottom: 30px;
 }
 
@@ -238,10 +241,6 @@ input#password {
 
 
 @media only screen and (max-width:1000px) {
-    .section1 p.call2 {
-        padding-bottom: 0px;
-    }
-
     .section1 p {
         width: 100%;
     }
