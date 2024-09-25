@@ -1,12 +1,3 @@
-window.onload = () => {
-    document.forms[0].onsubmit = () => {
-        alert("Form submitted!");
-        document.forms[0].dispatchEvent(new FormDataEvent("reset"));
-        return false;
-    }
-}
-
-
 function main() {
 
     const RED = "rgb(200,0,0)";
@@ -16,6 +7,9 @@ function main() {
     const pass = document.querySelector("#password");
     const checkPass = document.querySelector("#checkPassword");
     const div = document.querySelector("#passContainer");
+    const form = document.querySelector("#userInfo");
+    const btn = document.querySelector("#createAccount");
+
 
 
     const passMismatch = document.createElement("p");
@@ -25,43 +19,50 @@ function main() {
     div.appendChild(passMismatch);
 
 
-    let passInputs = "";
-    let checkPassInputs = "";
 
+    btn.addEventListener("click", e => {
+        const validityCheck = checkPassMatch(pass.value, checkPass.value);
+        if (validityCheck === false) {
+            alert("Passwords do not match or are blank.")
+            e.preventDefault();
+        }
+    });
 
     pass.addEventListener("input", () => {
-        passInputs = pass.value;
-        checkPassMatch(passInputs, checkPassInputs);
+        checkPassMatch(pass.value, checkPass.value);
     });
 
     checkPass.addEventListener("input", () => {
-        checkPassInputs = checkPass.value;
-        checkPassMatch(passInputs, checkPassInputs);
+        checkPassMatch(pass.value, checkPass.value);
     });
 
-    pass.addEventListener("invalid", () => {
-        passMismatch.style.display = "block";
-        pass.style.border = REDBORDER;
-    });
-
-    checkPass.addEventListener("invalid", () => {
-        checkPass.style.border = REDBORDER;
+    form.addEventListener("submit", e => {
+        alert("Form submitted!");
+        e.preventDefault();
+        form.reset();
+        checkPassMatch(pass.value, checkPass.value);
     });
 
 
 
     function checkPassMatch(passInputs, checkPassInputs) {
         if (passInputs === "" || checkPassInputs === "" || passInputs !== checkPassInputs) {
-            pass.dispatchEvent(new InputEvent("invalid"));
-            checkPass.dispatchEvent(new InputEvent("invalid"));
+            
+            passMismatch.style.display = "block";
+            pass.style.border = REDBORDER;
+            checkPass.style.border = REDBORDER;
+            return false;
+
         } else {
+            
             passMismatch.style.display = "none";
             pass.style.border = "";
             checkPass.style.border = "";
+            return true;
         }
     }
 
-    checkPassMatch(passInputs,checkPassInputs);
+    checkPassMatch(pass.value, checkPass.value);
 }
 
 main()
